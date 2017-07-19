@@ -14,7 +14,24 @@ Syntax highlighted code block
 # Header 1
 ## Header 2
 ### Header 3
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type ="text/css" rel="stlyesheet" href="stylesheet.css" />
+		<title> Home Page </title>
 
+	</head>
+
+	<body>
+		<div id = "header">
+			<p id="name">Biography</p>
+			<a href="mgautam123@ygmail.com">
+				<p id="mail">gautam123@gmail.com</p>
+			</a>
+		</div>
+	</body>
+<html>
+		
 - Bulleted
 - List
 
