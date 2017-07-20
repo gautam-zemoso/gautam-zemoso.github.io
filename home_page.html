@@ -1,0 +1,122 @@
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<link type ="text/css" rel="stylesheet" href="stylesheet.css" />
+			<title> Home Page </title>
+
+		</head>
+
+		<body>
+
+			<div id="header">
+			  <button class="ab" onclick="changeTopics('Home')">Home</button>
+			  <button class="ab" onclick="changeTopics('AboutMe')">About me</button>
+
+			  <button class="ab"  onclick="changeTopics('Gallary')">My Gallary</button>
+			  			  <button class="ab" onclick="changeTopics('Contact')">Contact me</button>
+			</div>
+			<div id = "Home" class ="title">
+				<p id="name"> This page contain biography of myself. Contact me given on contact link and my gallary can be viewed.</p>
+				
+			</div>
+			<div id = "AboutMe" class ="title">
+				<h3>Gautam Kumar</h3> 
+				<p>
+					My name is Gautam Kumar Gupta .Father's name Rajmani prasad .
+					for childhood i lived with family until I got into college.
+					I joined <span>IIT(ISM) Dhanbad</span> , as I  qualifed JEE Advance Entrance exam .
+					Due to my good result i get good college with good course.
+					<h4>Facts about me </h4>
+					<table class="tables">
+						<thead>
+							<th colspan="2">Details</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Full Name</td>
+								<td>Gautam Kumar</td>
+							</tr>
+							<tr>
+								<td>Date of Birth</td>
+								<td>14-04-1995</td>
+							</tr>
+							<tr>
+								<td>Birth Place</td>
+								<td>Chainpur ,jharkhand</td>
+							</tr>
+							<tr>
+								<td>Profession</td>
+								<td>Software Engineer</td>
+							</tr>
+						</tbody>
+					</table>
+				</p>
+			</div>
+			<div id="Gallary" class="title">
+				<table id="photo">
+					<thead>
+						<th colspan="3">
+							<h2 class="topic">My Gallary</h2>
+						</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<img src="http://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-8.jpg" />
+							</td>
+							<td>
+							    <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"/>
+							</td>
+							<td>
+								<img src="https://www.tourmyindia.com/blog/wp-content/uploads/2013/12/golden-temple.jpg"/>
+							</td>	
+						</tr>
+						<tr>
+						<td>
+							    <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"/>
+						</td>
+							<td>
+								<img src="https://www.tourmyindia.com/blog/wp-content/uploads/2013/12/Brihadeeswara-Temple.jpg"/>
+							</td>
+							<td>
+								<img src="http://www.fluentu.com/blog/japanese/wp-content/uploads/sites/6/2014/07/7-tips-learning-japanese-manga.jpg" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<img src="https://i.ytimg.com/vi/D86itLlFeTs/maxresdefault.jpg" />
+							</td>
+							<td>
+								<img src="https://s-media-cache-ak0.pinimg.com/736x/80/5e/07/805e072e08080e51af0537f9ea5c8a3a--anime-mangas-manga-anime.jpg" />
+							</td>
+							<td>
+							    <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"/>
+						</td>
+						</tr>
+					</tbody>
+					
+				</table>
+			</div>
+			<div id="Contact" class="title"> 
+					<p > Contact me : <strong>7946582354</strong></p>
+					<p> E-mail id :
+    					<a href="gautam123@ygmail.com">
+    					gautam123@gmail.com
+    				</a>
+					</p>
+					
+			</div>
+			<script>
+		    function changeTopics(headerName) {
+		        var i;
+		        var x = document.getElementsByClassName("title");
+		        for (i = 0; i < x.length; i++) {
+		           x[i].style.display = "none";  
+		        }
+		        document.getElementById(headerName).style.display = "inline-block";  
+		    }
+	    </script>
+		</body>
+	<html>
+			

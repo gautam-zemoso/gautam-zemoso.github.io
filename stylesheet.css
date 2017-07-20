@@ -1,0 +1,94 @@
+* {
+	border-radius: 5px ;
+}
+.title{
+    position : relative;
+    margin-top : 50px;
+    height : 100%;
+    width : 100%;
+}
+
+#header{
+	z-index: 1;
+	border : 2px solid black ;
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	background-color: #668284;
+	margin-top : -10px;
+	margin-bottom: -10px;
+}
+.ab:hover{
+    
+    font-weight : bold;
+	color : blue;
+	
+}
+.topic:hover{
+    
+    font-weight : bold;
+	color : red;
+	
+}
+.ab{
+	color : red;
+	padding : 2px;
+	margin-top : 5px;
+	margin-bottom : 5px;
+	position : relative;
+	background-color : white;
+}
+#name{
+    float : left ;
+    margin-left : 5px;
+	font-size: 20px;
+	font-family: Verdana , Impact;
+	padding: 10px ;
+	color: black ;
+}
+#mail{
+    float : right ;
+    margin-right : 5px;
+	font-family: cursive, Impact;
+	padding: 10px ;
+	color: blue ;
+}
+
+.tables{
+    border : 1px solid black;
+    position : relative;
+    margin-left : 10px; 
+}
+#photo{
+    border : 1px solid black;
+    position : relative;
+    width :100%;
+    height : 100%;
+    margin-left : 10px; 
+    background-color : blue ;
+}
+td{
+    border-radius: 0px ;
+    border : 1px solid black;
+    width : 30% ;
+}
+span{
+    font-family : Arial;
+    font-size : 20px;
+    font-weight : bold;
+}
+
+img{
+	height : 100% ;
+	width : 100% ;
+}
+a:hover{
+	font-weight : bold;
+	color : red;
+}
+
+#footer p:nth-{
+	padding : 10px;
+	position : inline ;
+	float : left ;
+}
