@@ -4,13 +4,13 @@
   <head>
 			<link type ="text/css" rel="stylesheet" href="stylesheet.css" />
 			<title> Gallery Admin </title>
-	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 	<script type="text/javascript" language="javascript" src="https://github.com/gautam-zemoso/gautam-zemoso.github.io/blob/master/image.json"></script> 
 	<script>
-		for(var obj = 0 ; obj < image.length ;obj ++){
-			var tblRow = "<tr>" + "<td>" + <img src=obj.imageURL /> + "</td>" +
-	           "<td>" + obj.imageName + "</td>" + "<td>" + obj.information + "</td>" + "<td>" + obj.uploadedDate + "</td>" + "</tr>"
+		for(var obj = 0 ; obj < data.image.length ;obj ++){
+			var tblRow = "<tr>" + "<td>" + <img src=data.image[obj].imageURL /> + "</td>" +
+	           "<td>" + data.image[obj].imageName + "</td>" + "<td>" + data.image[obj].information + "</td>" + "<td>" + data.image[obj].uploadedDate + "</td>" + "</tr>"
 	           tblRow.appendTo("#userdata tbody");
+			document.getElementsById('addimage').appendChild(tblRow);
 		}
 	</script>
 
@@ -24,9 +24,9 @@
             <th>Description</th>
             <th>update date</th>
         </thead>
-      <tbody>
+      <tbody id="addimage">
 
-       </tbody>
+       </tbody >
    </table>
 
 </div>
