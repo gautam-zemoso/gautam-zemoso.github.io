@@ -13,7 +13,7 @@
 
 	   var image = [];
 
-	   $.getJSON('gallery.json', function(data) {
+	   $.getJSON('image.json', function(data) {
 	       $.each(data.image, function(i, f) {
 	          var tblRow = "<tr>" + "<td>" + f.imageURL + "</td>" +
 	           "<td>" + f.imageName + "</td>" + "<td>" + f.information + "</td>" + "<td>" + f.uploadedDate + "</td>" + "</tr>"
