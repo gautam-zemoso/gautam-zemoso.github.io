@@ -7,22 +7,11 @@
 	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 	<script type="text/javascript" language="javascript" src="https://github.com/gautam-zemoso/gautam-zemoso.github.io/blob/master/image.json"></script> 
 	<script>
-
-	    $(function() {
-
-
-	   var image = [];
-
-	   $.getJSON('image.json', function(data) {
-	       $.each(data.image, function(i, f) {
-	          var tblRow = "<tr>" + "<td>" + f.imageURL + "</td>" +
-	           "<td>" + f.imageName + "</td>" + "<td>" + f.information + "</td>" + "<td>" + f.uploadedDate + "</td>" + "</tr>"
-	           $(tblRow).appendTo("#userdata tbody");
-	     });
-
-	   });
-
-	});
+		for(var obj = 0 ; obj < image.length ;obj ++){
+			var tblRow = "<tr>" + "<td>" + <img src=obj.imageURL /> + "</td>" +
+	           "<td>" + obj.imageName + "</td>" + "<td>" + obj.information + "</td>" + "<td>" + obj.uploadedDate + "</td>" + "</tr>"
+	           tblRow.appendTo("#userdata tbody");
+		}
 	</script>
 
   </head>
