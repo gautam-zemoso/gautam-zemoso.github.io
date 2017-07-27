@@ -5,7 +5,28 @@
 			<link type ="text/css" rel="stylesheet" href="stylesheet.css" />
 			<title> Gallery Admin </title>
 	<script type="text/javascript" language="javascript" src="https://github.com/gautam-zemoso/gautam-zemoso.github.io/blob/master/image.json"></script> 
-	
+	<script>
+		function myFunction() {
+		for(var obj = 0 ; obj < data.image.length ;obj ++){
+			var table = document.getElementById("myTable");
+            var row = table.insertRow(0);
+            var x=row.insertCell(0);
+            var img = document.createElement('img');
+            img.src = data.image[obj].imageURL;
+            x.appendChild(img);
+            var y=row.insertCell(0);
+            var newText  = document.createTextNode(data.image[obj].uploadedDate);
+            y.appendChild(newText);
+            y=row.insertCell(0);
+             newText  = document.createTextNode(data.image[obj].information);
+            y.appendChild(newText);
+            y=row.insertCell(0);
+            newText  = document.createTextNode(data.image[obj].imageName);
+            y.appendChild(newText);
+    
+		}
+		}
+	</script>
 
   </head>
 <body>
@@ -33,28 +54,7 @@
   <input type="button" onclick="myFunction()" value="Submit">
 </form>
 
-	<script>
-		function myFunction() {
-		for(var obj = 0 ; obj < data.image.length ;obj ++){
-			var table = document.getElementById("myTable");
-            var row = table.insertRow(0);
-            var x=row.insertCell(0);
-            var img = document.createElement('img');
-            img.src = data.image[obj].imageURL;
-            x.appendChild(img);
-            var y=row.insertCell(0);
-            var newText  = document.createTextNode(data.image[obj].uploadedDate);
-            y.appendChild(newText);
-            y=row.insertCell(0);
-             newText  = document.createTextNode(data.image[obj].information);
-            y.appendChild(newText);
-            y=row.insertCell(0);
-            newText  = document.createTextNode(data.image[obj].imageName);
-            y.appendChild(newText);
-    
-		}
-		}
-	</script>
+	
 
 </body>
 </html>
