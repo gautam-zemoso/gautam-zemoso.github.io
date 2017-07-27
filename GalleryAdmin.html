@@ -4,9 +4,43 @@
   <head>
 			<link type ="text/css" rel="stylesheet" href="stylesheet.css" />
 			<title> Gallery Admin </title>
+	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+	<script>
+
+	    $(function() {
+
+
+	   var image = [];
+
+	   $.getJSON('gallery.json', function(data) {
+	       $.each(data.image, function(i, f) {
+	          var tblRow = "<tr>" + "<td>" + f.imageURL + "</td>" +
+	           "<td>" + f.imageName + "</td>" + "<td>" + f.information + "</td>" + "<td>" + f.uploadedDate + "</td>" + "</tr>"
+	           $(tblRow).appendTo("#userdata tbody");
+	     });
+
+	   });
+
+	});
+	</script>
 
   </head>
 <body>
+	<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>image</th>
+            <th>name</th>
+            <th>Description</th>
+            <th>update date</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
 
 <p>Enter names in the fields, then click "Submit" to submit the form:</p>
   <form id="frm1" action="https://gautam-zemoso.github.io/GalleryAdmin.html">
