@@ -7,10 +7,13 @@
 	<script type="text/javascript" language="javascript" src="https://github.com/gautam-zemoso/gautam-zemoso.github.io/blob/master/image.json"></script> 
 	<script>
 		for(var obj = 0 ; obj < data.image.length ;obj ++){
-			var tblRow = "<tr>" + "<td>" + <img src=data.image[obj].imageURL /> + "</td>" +
-	           "<td>" + data.image[obj].imageName + "</td>" + "<td>" + data.image[obj].information + "</td>" + "<td>" + data.image[obj].uploadedDate + "</td>" + "</tr>"
-	           tblRow.appendTo("#userdata tbody");
-			document.getElementsById('addimage').appendChild(tblRow);
+			var tblRow = "<tr>" + "<td>" + "<img src= " + data.image[obj].imageURL + "/> " +      "</td>" + "<td>" + data.image[obj].imageName + "</td>" + "<td>" +
+			    data.image[obj].information + "</td>" + "<td>" + data.image[obj].uploadedDate + "</td>" + "</tr>" ;
+	 
+			var tableRef = document.getElementById('userdata').getElementsByTagName('tbody')[0];
+
+var newRow   = tableRef.insertRow(tableRef.rows.length);
+newRow.appendChild(tblRow);document.getElementsById('addimage').appendChild(tblRow);
 		}
 	</script>
 
