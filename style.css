@@ -3,11 +3,11 @@ img {
   height : 100% ;
 }
 tr{
-    height : 30px;
+    height : 100px;
 }
-td{
-     height : 50px;
-}
+/* td{
+     height : 100px;
+} */
 #insert{
   position : relative ;
   float : left ;
