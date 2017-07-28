@@ -52,19 +52,12 @@
     }
     function removeFunction(){
         var idx = document.forms["remove"]["idNumber"].value ;
-
-        // var table = document.getElementById("myTable");
-        // var row = table.deleteRow(idx);
-
+      
         idx = rawData.length - idx ;
-        
+        if(idx < 0 ){
+          alert("Wrong Input");
+        }
         rawData.splice(idx,1);
-        // var len =  document.getElementById("myTable").rows.length;
-        // for(var i = idx ; i < len ;i++)
-        // {
-        //   var table = document.getElementById("myTable");
-        //      var row = table.deleteRow(0);
-        // } 
         document.getElementById("del").reset();  
         myFunction();
         return false;
@@ -124,7 +117,7 @@
   </form>
 </div>
   
-<div class = "divUpload">
+<div id = "divUpload">
   <p>Enter names in the fields, then click "Submit" to add the image:</p>
   <form id="upload" name="update" action=""  method="get" onsubmit="return updateFunction();">
     Id Number:     <input type="number" name="idNumber" required><br>
