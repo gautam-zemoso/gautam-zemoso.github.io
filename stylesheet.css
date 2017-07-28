@@ -92,3 +92,18 @@ a:hover{
 	position : inline ;
 	float : left ;
 }
+
+#insert{
+  position : relative ;
+  float : left ;
+}
+input{
+    margin : 10px ;
+}
+#upload {
+  position : relative ;
+  float : right ;
+}
+#del{
+    clear : both;
+}
