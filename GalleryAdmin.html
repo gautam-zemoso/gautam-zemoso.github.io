@@ -107,7 +107,7 @@
 <button onclick="myFunction()">Load images</button>
 </div>
 <div class="divInsert">
-  <p>Enter names in the fields, then click "Submit" to add the image:</p>
+  <p class="pg">Enter names in the fields, then click "Submit" to add the image:</p>
     <form id="insert" name="add" action=""  method="get" onsubmit="return addFunction();">
     Image URL:     <input type="url" name="imageurl" required><br>
     Name:          <input type="text" name="named" required><br><br>
@@ -118,7 +118,7 @@
 </div>
   
 <div id = "divUpload">
-  <p>Enter names in the fields, then click "Submit" to add the image:</p>
+  <p class="pg">Enter names in the fields, then click "Submit" to update the image:</p>
   <form id="upload" name="update" action=""  method="get" onsubmit="return updateFunction();">
     Id Number:     <input type="number" name="idNumber" required><br>
     Image URL:     <input type="url" name="imageurl" ><br>
@@ -129,7 +129,7 @@
   </form>
 </div>
   <div class="divDel">
-  <p>Enter index of image which you want to delete:</p>
+  <p class="pg">Enter index of image which you want to delete:</p>
   <form  id="del" name="remove" action=""  method="get" onsubmit="return removeFunction();">
     Id Number: <input type="number" name="idNumber" min = 1 required><br>
     <input type="submit" value="Submit" >
