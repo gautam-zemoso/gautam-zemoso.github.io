@@ -18,6 +18,10 @@
 	margin-top : -10px;
 	margin-bottom: -10px;
 }
+#frm1{
+   float : right ;
+    margin-right : 74% ;	
+}
 .ab:hover{
     
     font-weight : bold;
@@ -46,6 +50,10 @@
 	padding: 10px ;
 	color: black ;
 }
+#factbody td{
+    border-radius: 0px ;
+    border : 1px solid black;
+} 
 #mail{
     float : right ;
     margin-right : 5px;
