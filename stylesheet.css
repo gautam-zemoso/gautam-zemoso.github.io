@@ -93,17 +93,17 @@ a:hover{
 	float : left ;
 }
 
-#insert{
+.divInsert{
   position : relative ;
   float : left ;
 }
 input{
     margin : 10px ;
 }
-#upload {
+.divUpload {
   position : relative ;
   float : right ;
 }
-#del{
+.divDel{
     clear : both;
 }
