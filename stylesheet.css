@@ -87,18 +87,27 @@ a:hover{
 	color : red;
 }
 
-#footer p:nth-{
+#footer p{
 	padding : 10px;
 	position : inline ;
 	float : left ;
 }
-
+#mytable td{
+    border-radius: 0px ;
+    border : 1px solid black;
+    width : 20% ;
+    height : 100px;
+}
 .divInsert{
   position : relative ;
   float : left ;
 }
 input{
     margin : 10px ;
+}
+.pg{
+    font-weight : bold ;
+    font-family : Verdana , Impact ; 
 }
 #divUpload {
   position : relative ;
