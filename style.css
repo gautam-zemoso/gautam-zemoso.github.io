@@ -1,25 +1,30 @@
-img {
-  width : 100%;
-  height : 100% ;
+* {
+	border-radius: 5px ;
 }
-/* tr{
-    height : 100px;
-} */
+
 td{
-     border-radius: 0px ;
+    border-radius: 0px ;
     border : 1px solid black;
 }
-#insert{
+
+img{
+	height : 100% ;
+	width : 100% ;
+}
+
+.divInsert{
   position : relative ;
   float : left ;
+ 
 }
 input{
     margin : 10px ;
 }
-#upload {
+.divUpload {
   position : relative ;
   float : right ;
 }
-#del{
+.divDel{
+    position : relative ;
     clear : both;
 }
