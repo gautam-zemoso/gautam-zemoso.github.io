@@ -1,60 +1,138 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-			<link type ="text/css" rel="stylesheet" href="stylesheet.css" />
-			<title> Gallery Admin </title>
-	<script type="text/javascript" language="javascript" src="https://github.com/gautam-zemoso/gautam-zemoso.github.io/blob/master/image.json"></script> 
-	<script>
-		function myFunction() {
-		for(var obj = 0 ; obj < data.image.length ;obj ++){
-			var table = document.getElementById("myTable");
+      <link type ="text/css" rel="stylesheet" href="stylesheet.css" />
+      <title> Gallery Admin </title>
+  <script type="text/javascript" src="https://rawgit.com/gautam-zemoso/gautam-zemoso.github.io/master/image.js"></script>
+
+  <script>
+    var rawData = data.image ;
+    function myFunction() {
+    var len =  document.getElementById("myTable").rows.length;
+    for(var i = 0 ; i < len ;i++)
+    {
+      var table = document.getElementById("myTable");
+         var row = table.deleteRow(0);
+    }  
+    for(var obj = 0 ; obj < rawData.length ;obj ++){
+            var table = document.getElementById("myTable");
             var row = table.insertRow(0);
             var x=row.insertCell(0);
             var img = document.createElement('img');
-            img.src = data.image[obj].imageURL;
+            img.src = rawData[obj].imageURL;
             x.appendChild(img);
-            var y=row.insertCell(0);
-            var newText  = document.createTextNode(data.image[obj].uploadedDate);
-            y.appendChild(newText);
-            y=row.insertCell(0);
-             newText  = document.createTextNode(data.image[obj].information);
-            y.appendChild(newText);
-            y=row.insertCell(0);
-            newText  = document.createTextNode(data.image[obj].imageName);
-            y.appendChild(newText);
-    
-		}
-		}
-	</script>
+            x=row.insertCell(0);
+            var uploadedDate  = document.createTextNode(rawData[obj].uploadedDate);
+            x.appendChild(uploadedDate);
+            x=row.insertCell(0);
+            var information  = document.createTextNode(rawData[obj].information);
+            x.appendChild(information);
+            x=row.insertCell(0);
+            var imageName  = document.createTextNode(rawData[obj].imageName);
+            x.appendChild(imageName);
+            x = row.insertCell(0);
+            var index = document.createTextNode(rawData.length - obj );
+            x.appendChild(index);
+    }
+    return false;
+  }
+    function addFunction(){
+        
+        var element ={};
+        element.imageURL = document.forms["add"]["imageurl"].value ;
+        element.imageName = document.forms["add"]["named"].value;
+        element.information = document.forms["add"]["inform"].value;
+        element.uploadedDate = document.forms["add"]["uploadDate"].value ;
+
+        rawData.push(element);
+        document.getElementById("insert").reset(); 
+        myFunction();
+        return false;
+    }
+    function removeFunction(){
+        var idx = document.forms["remove"]["idNumber"].value ;
+
+        idx = rawData.length - idx ;
+        
+        rawData.splice(idx,1);
+        
+        document.getElementById("del").reset();  
+        myFunction();
+        return false;
+    }
+
+    function updateFunction(){
+        var idx = document.forms["update"]["idNumber"].value;
+        idx = rawData.length - idx ;
+        var x = document.forms["update"]["imageurl"].value ;
+        if(x.length > 0){
+          rawData[idx].imageURL = x;
+        }
+         x = document.forms["update"]["named"].value ;
+        if(x.length > 0){
+          rawData[idx].imageName = x;
+        }
+         x = document.forms["update"]["inform"].value ;
+        if(x.length > 0){
+          rawData[idx].information = x;
+        }
+         x = document.forms["update"]["uploadDate"].value ;
+        if(x.length > 0){
+          rawData[idx].uploadedDate = x;
+        }
+        document.getElementById("upload").reset(); 
+        myFunction();
+        return false;
+        
+    }
+  </script>
 
   </head>
 <body>
-	<div class="profile">
+  <div class="profile">
    <table id= "userdata" border="2">
-  <thead>
-            <th>image</th>
+  <thead>   
+            <th>Id</th>
             <th>name</th>
             <th>Description</th>
             <th>update date</th>
+            <th>image</th>
         </thead>
       <tbody id="myTable">
-
+          
        </tbody >
    </table>
 <button onclick="myFunction()">Load images</button>
 </div>
+<div id="insert">
+  <p>Enter names in the fields, then click "Submit" to add the image:</p>
+    <form  name="add" action=""  method="get" onsubmit="return addFunction();">
+    Image URL: <input type="url" name="imageurl" required><br>
+    Name   :  <input type="text" name="named" required><br><br>
+    Information:   <input type="text" name="inform" required><br><br>
+    Uploaded Date: <input type="date" name="uploadDate" max="2017-07-28" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div id="upload">
+<p>Enter names in the fields, then click "Submit" to update the image:</p>
+  <form  name="update" action=""  method="get" onsubmit="return updateFunction();">
+    Id Number:     <input type="number" name="idNumber" required><br>
+    Image URL:     <input type="url" name="imageurl" ><br>
+    Name:          <input type="text" name="named" ><br><br>
+    Information:   <input type="text" name="inform" ><br><br>
+    Uploaded Date: <input type="date" name="uploadDate" max="2017-07-28" ><br><br>
+    <input type="submit" value="Submit" >
+  </form
+  </div>
+  <div id="del">
+  <p>Enter index of image which you want to delete:</p>
+  <form  name="remove" action=""  method="get" onsubmit="return removeFunction();">
+    Id Number: <input type="number" name="idNumber" min = 1 required><br>
+    <input type="submit" value="Submit" >
+  </form>
 
-<p>Enter names in the fields, then click "Submit" to submit the form:</p>
-  <form id="frm1" action="https://gautam-zemoso.github.io/GalleryAdmin.html">
-  Image URL:     <input type="text" name="url"><br>
-  Name:          <input type="text" name="name"><br><br>
-  Information:   <input type="text" name="info"><br><br>
-  Uploaded Date: <input type="date" name="update" max="2017-07-27"><br><br>
-  <input type="button" onclick="myFunction()" value="Submit">
-</form>
-
-	
-
+ </div>
 </body>
 </html>
+
