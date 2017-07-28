@@ -20,7 +20,7 @@ img{
 input{
     margin : 10px ;
 }
-.divUpload {
+#divUpload {
   position : relative ;
   float : right ;
 }
